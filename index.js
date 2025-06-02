@@ -4,7 +4,7 @@ const path = require('path');
 
 // Bot configuration
 const config = {
-    token: 'MTM3NjYzNDc5MzY1OTMzNDcxNg.Gu_HWD.jit9Rv3Xo9yHFcWIHTXIuBk593plGAqpNzrMW4',
+    token: process.env.DISCORD_TOKEN,
     prefix: '?',
     dataFile: './bot_data.json',
     inviteLink: 'https://discord.com/oauth2/authorize?client_id=1376634793659334716&permissions=8&integration_type=0&scope=bot+applications.commands'

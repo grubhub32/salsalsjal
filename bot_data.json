@@ -1,0 +1,61 @@
+{
+  "1377846491204419604": {
+    "settings": {
+      "prefix": ".",
+      "welcomeChannel": null,
+      "leaveChannel": null,
+      "logsChannel": null,
+      "autoRole": null,
+      "allowedRole": null,
+      "autoPurge": {},
+      "antiSpam": true,
+      "antiCaps": true,
+      "antiInvites": true,
+      "antiMention": true,
+      "antiRaid": true
+    },
+    "whitelist": [
+      "1373389272606052474",
+      "633678902639853568",
+      "1365872941929332789",
+      "651095740390834176"
+    ],
+    "warnings": {},
+    "tempBans": {},
+    "mutes": {},
+    "logs": [
+      {
+        "timestamp": "2025-06-02T05:04:22.764Z",
+        "action": "Whitelist",
+        "details": "abyssfral added abyssfral to whitelist"
+      },
+      {
+        "timestamp": "2025-06-02T05:04:45.042Z",
+        "action": "Whitelist",
+        "details": "abyssfral added playerun to whitelist"
+      },
+      {
+        "timestamp": "2025-06-02T05:04:50.984Z",
+        "action": "Whitelist",
+        "details": "abyssfral added 200iq_.potato to whitelist"
+      },
+      {
+        "timestamp": "2025-06-02T05:04:56.502Z",
+        "action": "Whitelist",
+        "details": "abyssfral added Security#1120 to whitelist"
+      },
+      {
+        "timestamp": "2025-06-02T05:05:02.756Z",
+        "action": "Purge",
+        "details": "abyssfral purged 10 messages in admin-commands"
+      },
+      {
+        "timestamp": "2025-06-02T05:05:10.471Z",
+        "action": "Settings",
+        "details": "abyssfral changed prefix to ."
+      }
+    ],
+    "messageCache": {},
+    "joinTimes": {}
+  }
+}

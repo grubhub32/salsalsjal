@@ -4,9 +4,10 @@ const path = require('path');
 
 // Bot configuration
 const config = {
-    token: 'MTM3NjYzNDc5MzY1OTMzNDcxNg.G353LU.jCSFW4wemUsjrDYQXOp0z4ZTabrCSh1SDz9NJM',
+    token: 'MTM3NjYzNDc5MzY1OTMzNDcxNg.Gu_HWD.jit9Rv3Xo9yHFcWIHTXIuBk593plGAqpNzrMW4',
     prefix: '?',
-    dataFile: './bot_data.json'
+    dataFile: './bot_data.json',
+    inviteLink: 'https://discord.com/oauth2/authorize?client_id=1376634793659334716&permissions=8&integration_type=0&scope=bot+applications.commands'
 };
 
 // Initialize client with necessary intents
@@ -416,6 +417,9 @@ client.on('messageCreate', async (message) => {
             case 'togglesetting':
                 await handleToggleSetting(message, args);
                 break;
+            case 'invite':
+                await handleInvite(message);
+                break;
             case 'help':
                 await handleHelp(message);
                 break;
@@ -668,7 +672,6 @@ async function handleSetLogs(message, args) {
     message.reply(`Successfully set logs channel to ${channel.name}`);
 }
 
-// New command: Set server-specific prefix
 async function handleSetPrefix(message, args) {
     const newPrefix = args[0];
     if (!newPrefix) return message.reply('Please provide a new prefix.');
@@ -883,7 +886,6 @@ async function handleAutoPurge(message, args) {
     }
 }
 
-// New command: Toggle server-specific settings
 async function handleToggleSetting(message, args) {
     const setting = args[0];
     const validSettings = ['antiSpam', 'antiCaps', 'antiInvites', 'antiMention', 'antiRaid'];
@@ -902,6 +904,16 @@ async function handleToggleSetting(message, args) {
     message.reply(`${setting} is now ${status}.`);
 }
 
+async function handleInvite(message) {
+    const embed = new Discord.EmbedBuilder()
+        .setTitle('Invite Me to Your Server!')
+        .setDescription(`[Click here to invite me](${config.inviteLink})`)
+        .setColor(0x7289DA)
+        .setFooter({ text: 'Thank you for using this bot!' });
+    
+    message.reply({ embeds: [embed] });
+}
+
 async function handleHelp(message) {
     const guildId = message.guild.id;
     const serverPrefix = getPrefix(guildId);
@@ -915,7 +927,7 @@ async function handleHelp(message) {
             { name: 'Role Management', value: '`setrole` `setautorole`', inline: false },
             { name: 'Channel Management', value: '`createchannel` `deletechannel` `setwelcome` `setleave` `setlogs`', inline: false },
             { name: 'Settings', value: '`setprefix` `togglesetting` `restriction`', inline: false },
-            { name: 'Utility', value: '`logs` `whitelist` `autopurge`', inline: false },
+            { name: 'Utility', value: '`logs` `whitelist` `autopurge` `invite`', inline: false },
             { name: 'Auto Moderation', value: 'Anti-spam, Anti-caps, Anti-invites, Anti-mention, Anti-raid', inline: false }
         )
         .setFooter({ text: `Use ${serverPrefix}command for each command` });

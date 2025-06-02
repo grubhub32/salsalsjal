@@ -5,7 +5,7 @@ const http = require('http'); // Added HTTP module
 
 // Bot configuration
 const config = {
-    token: 'MTM3NjYzNDc5MzY1OTMzNDcxNg.GvhjE6.7Vwk6LRcPeJDnxW9h_oAt9J3lTWUdlLB2uoT6s',
+    token: process.env.DISCORD_TOKEN, // From .env file
     prefix: '?',
     dataFile: './bot_data.json',
     inviteLink: 'https://discord.com/oauth2/authorize?client_id=1376634793659334716&permissions=8&integration_type=0&scope=bot+applications.commands',

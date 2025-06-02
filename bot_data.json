@@ -2,12 +2,21 @@
   "1377846491204419604": {
     "settings": {
       "prefix": ".",
-      "welcomeChannel": null,
-      "leaveChannel": null,
-      "logsChannel": null,
-      "autoRole": null,
+      "welcomeChannel": "1378174284798759033",
+      "leaveChannel": "1378174940498628751",
+      "logsChannel": 1378168375611752498,
+      "autoRole": "1378870208969834627",
       "allowedRole": null,
-      "autoPurge": {},
+      "autoPurge": {
+        "1377846845283368972": {
+          "interval": 14400000,
+          "lastPurge": 1748884618717
+        },
+        "1377846842087182356": {
+          "interval": 7200000,
+          "lastPurge": 1748884734369
+        }
+      },
       "antiSpam": true,
       "antiCaps": true,
       "antiInvites": true,
@@ -53,6 +62,36 @@
         "timestamp": "2025-06-02T05:05:10.471Z",
         "action": "Settings",
         "details": "abyssfral changed prefix to ."
+      },
+      {
+        "timestamp": "2025-06-02T16:36:02.164Z",
+        "action": "Settings",
+        "details": "abyssfral set auto-role to Member"
+      },
+      {
+        "timestamp": "2025-06-02T17:08:16.493Z",
+        "action": "Settings",
+        "details": "abyssfral set welcome channel to 👋welcome"
+      },
+      {
+        "timestamp": "2025-06-02T17:08:21.941Z",
+        "action": "Settings",
+        "details": "abyssfral set leave channel to 🛫leave"
+      },
+      {
+        "timestamp": "2025-06-02T17:09:12.871Z",
+        "action": "Auto Purge",
+        "details": "abyssfral enabled auto purge in assignments every 4h"
+      },
+      {
+        "timestamp": "2025-06-02T17:16:58.732Z",
+        "action": "Auto Purge",
+        "details": "abyssfral enabled auto purge in assignments every 4h"
+      },
+      {
+        "timestamp": "2025-06-02T17:18:54.408Z",
+        "action": "Auto Purge",
+        "details": "abyssfral enabled auto purge in 💡tips every 2h"
       }
     ],
     "messageCache": {},

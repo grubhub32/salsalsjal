@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+const http = require('http'); // Added HTTP module
 
 // Bot configuration
 const config = {
-    token: process.env.DISCORD_TOKEN,
+    token: 'MTM3NjYzNDc5MzY1OTMzNDcxNg.GvhjE6.7Vwk6LRcPeJDnxW9h_oAt9J3lTWUdlLB2uoT6s',
     prefix: '?',
     dataFile: './bot_data.json',
-    inviteLink: 'https://discord.com/oauth2/authorize?client_id=1376634793659334716&permissions=8&integration_type=0&scope=bot+applications.commands'
+    inviteLink: 'https://discord.com/oauth2/authorize?client_id=1376634793659334716&permissions=8&integration_type=0&scope=bot+applications.commands',
+    port: process.env.PORT || 3000 // Added port configuration (defaults to 3000 or environment variable)
 };
 
 // Initialize client with necessary intents
@@ -20,6 +22,17 @@ const client = new Discord.Client({
         Discord.GatewayIntentBits.GuildBans,
         Discord.GatewayIntentBits.GuildModeration
     ]
+});
+
+// Create a simple HTTP server
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Discord bot is running!\n');
+});
+
+// Start the server
+server.listen(config.port, () => {
+    console.log(`Server running on port ${config.port}`);
 });
 
 // Data storage - now fully server-specific

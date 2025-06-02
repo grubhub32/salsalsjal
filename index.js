@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const http = require('http'); // Added HTTP module
+require('dotenv').config();
 
 // Bot configuration
 const config = {
@@ -9,7 +10,7 @@ const config = {
     prefix: '?',
     dataFile: './bot_data.json',
     inviteLink: 'https://discord.com/oauth2/authorize?client_id=1376634793659334716&permissions=8&integration_type=0&scope=bot+applications.commands',
-    port: process.env.PORT || 3000 // Added port configuration (defaults to 3000 or environment variable)
+    port: process.env.PORT || 10000 // Added port configuration (defaults to 3000 or environment variable)
 };
 
 // Initialize client with necessary intents
@@ -981,5 +982,4 @@ process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
 });
 
-// Login
-client.login(config.token);
+client.login(process.env.DISCORD_TOKEN);
